@@ -1,0 +1,119 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'fullstack'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=fullstack",
+                    "--package=my-todo-app"
+                ],
+                "filter": {
+                    "name": "fullstack",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'fullstack'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=fullstack",
+                    "--package=my-todo-app"
+                ],
+                "filter": {
+                    "name": "fullstack",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tsync'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tsync",
+                    "--package=my-todo-app"
+                ],
+                "filter": {
+                    "name": "tsync",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tsync'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tsync",
+                    "--package=my-todo-app"
+                ],
+                "filter": {
+                    "name": "tsync",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'my-todo-app'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=my-todo-app",
+                    "--package=my-todo-app"
+                ],
+                "filter": {
+                    "name": "my-todo-app",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'my-todo-app'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=my-todo-app",
+                    "--package=my-todo-app"
+                ],
+                "filter": {
+                    "name": "my-todo-app",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

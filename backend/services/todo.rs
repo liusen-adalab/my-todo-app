@@ -79,11 +79,17 @@ async fn destroy(
     }
 }
 
+#[post("/hello")]
+async fn hello() -> String {
+    "hello a".to_string()
+}
+
 pub fn endpoints(scope: actix_web::Scope) -> actix_web::Scope {
     return scope
         .service(index)
         .service(read)
         .service(create)
         .service(update)
+        .service(hello)
         .service(destroy);
 }

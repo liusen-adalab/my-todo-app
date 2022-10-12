@@ -1,4 +1,4 @@
-#[macro_use]
+// #[macro_use]
 extern crate diesel;
 
 use actix_web::guard;

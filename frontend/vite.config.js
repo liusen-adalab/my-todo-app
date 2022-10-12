@@ -1,6 +1,6 @@
 import react from '@vitejs/plugin-react'
-import {resolve} from 'path'
-import {defineConfig} from 'vite'
+import { resolve } from 'path'
+import { defineConfig } from 'vite'
 import glob from 'glob'
 
 const buildRollupInput = (isDevelopment) => {
@@ -12,9 +12,9 @@ const buildRollupInput = (isDevelopment) => {
 
     glob.sync(resolve(__dirname, './bundles/**/*.tsx')).map(inputEntry => {
         let outputEntry = inputEntry
-        // output entry is an absolute path, let's remove the absolute part:
+            // output entry is an absolute path, let's remove the absolute part:
         outputEntry = outputEntry.replace(`${__dirname}/`, '')
-        // replace directory separator with "__"
+            // replace directory separator with "__"
         outputEntry = outputEntry.replace(/\//g, '__')
 
         rollupInput[outputEntry] = inputEntry
@@ -24,8 +24,9 @@ const buildRollupInput = (isDevelopment) => {
 }
 
 // https://vitejs.dev/config/
-export default defineConfig(async ({ command, mode }) => ({
+export default defineConfig(async({ command, mode }) => ({
     base: command === 'serve' ? 'http://localhost:21012' : '/',
+    // base: 'http://localhost:21013',
     build: {
         manifest: true,
         rollupOptions: {
@@ -38,11 +39,11 @@ export default defineConfig(async ({ command, mode }) => ({
         proxy: {
             // with options
             '/api': {
-                target: 'http://localhost:3000',
+                target: 'http://127.0.0.1:3000',
                 changeOrigin: true,
             },
             '/graphql': {
-                target: 'http://localhost:3000',
+                target: 'http://127.0.0.1:3000',
                 changeOrigin: true
             }
         }
